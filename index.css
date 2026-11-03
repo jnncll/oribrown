@@ -1,0 +1,51 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+body {
+  @apply bg-cream font-body text-cocoa antialiased;
+}
+@layer components {
+  .toon-card {
+    @apply rounded-3xl border-[3px] border-cocoa bg-vanilla shadow-toon;
+  }
+  .btn-toon {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl border-[3px] border-cocoa px-5 py-2.5 font-display text-base font-semibold shadow-toon transition-[transform,box-shadow,background-color] duration-150 ease-toon hover:-translate-y-0.5 active:translate-x-[3px] active:translate-y-[3px] active:shadow-none focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-zest/40 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 disabled:active:translate-x-0 disabled:active:translate-y-0 disabled:active:shadow-toon;
+  }
+  .btn-primary {
+    @apply btn-toon bg-zest text-white;
+  }
+  .btn-secondary {
+    @apply btn-toon bg-vanilla text-cocoa hover:bg-white;
+  }
+  .btn-dark {
+    @apply btn-toon bg-choco text-cream;
+  }
+  .toon-input {
+    @apply w-full rounded-2xl border-[3px] border-cocoa bg-white px-4 py-2.5 font-body text-cocoa placeholder:text-cocoa/40 focus:outline-none focus:ring-4 focus:ring-zest/30;
+  }
+  .toon-label {
+    @apply mb-1.5 block font-display text-sm font-semibold text-cocoa;
+  }
+  .toon-error {
+    @apply mt-1.5 text-sm font-bold text-burnt;
+  }
+  .chip-toggle {
+    @apply rounded-2xl border-[3px] border-cocoa px-3 py-2 font-display text-sm font-semibold shadow-toon-sm transition-[transform,box-shadow,background-color,color] duration-150 ease-toon active:translate-x-[2px] active:translate-y-[2px] active:shadow-none focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-zest/30;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
